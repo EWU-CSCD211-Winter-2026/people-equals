@@ -24,5 +24,9 @@ public class Person extends Object {
 
         return false;
     }
+    @Override
+    public String toString() {
+        return this.name + ", " + this.age;
+    }
 
 }
