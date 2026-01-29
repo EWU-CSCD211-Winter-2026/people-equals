@@ -20,9 +20,9 @@ public class App {
 
         Person[] people = new Person[1000];
 
-        people[p1.hashCode() % people.length] = p1;
-        people[p2.hashCode() % people.length] = p2;
-        people[charlie.hashCode() % people.length] = charlie;
+        people[Math.abs(p1.hashCode() % people.length)] = p1;
+        people[Math.abs(p2.hashCode() % people.length)] = p2;
+        people[Math.abs(charlie.hashCode() % people.length)] = charlie;
 
 
         // does people contain Charlie?
@@ -40,7 +40,7 @@ public class App {
 
         // does people contain Charlie?
         // the fast (good) way:
-        int index = charlie.hashCode() % people.length;
+        int index = Math.abs(charlie.hashCode() % people.length);
         if (charlie.equals(people[index])) {
             System.out.println(charlie + " is contained in people using hashCode " + index);
         } else {

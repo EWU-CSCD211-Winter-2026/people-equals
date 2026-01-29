@@ -28,5 +28,9 @@ public class Person extends Object {
     public String toString() {
         return this.name + ", " + this.age;
     }
+    @Override
+    public int hashCode() {
+        return this.name.hashCode() + this.age;
+    }
 
 }
